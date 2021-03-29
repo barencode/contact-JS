@@ -10,7 +10,13 @@
 <script>
     var app = angular.module('app',[])
     .controller('contactListCtr', function($scope){
-
+        $scope.contactlist = [
+            {
+                name: 'Vladimir',
+                lastname: 'Minaev',
+                email: 'hydatidosis@gmail.com'
+            }
+        ];
     })
 </script>
 <!-- end of application declaration -->
