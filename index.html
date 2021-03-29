@@ -4,11 +4,19 @@
 <meta charset="UTF-8">
 <title>Simple Contact List App</title>
 <link href="styles/main.css" rel="stylesheet" type="text/css">
-<script>src="node_modules/angular/angular.min.js"</script>
+<script> src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"</script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css" integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
+<!-- application declaration-->
+<script>
+    var app = angular.module('app',[])
+    .controller('contactListCtr', function($scope){
+
+    })
+</script>
+<!-- end of application declaration -->
 </head>
 
-<body>
+<body ng-app="app" ng-controller="contactListCtr">
 
 </body>
 </html>
