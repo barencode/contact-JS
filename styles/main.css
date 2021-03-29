@@ -4,3 +4,22 @@
 body{
 color: bisque;
 }
+
+form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding-top: 20;
+}
+
+form button.small {
+    padding: 8 17;
+}
+
+#contactList {
+    margin: 0 auto;
+}
+
+#contactList button.tiny {
+    margin-bottom: 0;
+    padding: 5 10;
+}
