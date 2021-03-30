@@ -58,65 +58,69 @@
 
 <body ng-app="app" ng-controller="contactListCtr">
 
-<form>
-    <div class="row">
-        <div class="small-3 columns">
-            <label class="right inline">Name</label>
+<div class="content">
+    <form>
+        <div class="grid-x grid-padding-x">
+            <div class="small-3 cell">
+                <label for="middle-label" class="text-right middle">Name</label>
+            </div>
+            <div class="small-9 cell">
+                <input type="text" id="middle-label" placeholder="Please enter your first name" ng-model="name">
+            </div>
         </div>
-        <div class="small-9 columns">
-            <input type="text" id="right-label" ng-model="name">
+        <div class="grid-x grid-padding-x">
+            <div class="small-3 cell">
+                <label for="middle-label" class="text-right middle">Last Name</label>
+            </div>
+            <div class="small-9 cell">
+                <input type="text" id="middle-label" placeholder="Please enter your last name" ng-model="lastname">
+            </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="small-3 columns">
-            <label class="right inline">Last Name</label>
+        <div class="grid-x grid-padding-x">
+            <div class="small-3 cell">
+                <label for="middle-label" class="text-right middle">E-mail</label>
+            </div>
+            <div class="small-9 cell">
+                <input type="email" id="middle-label" placeholder="Please enter your e-mail address" ng-model="email">
+            </div>
         </div>
-        <div class="small-9 columns">
-            <input type="text" id="right-label" ng-model="lastname">
+        <div class="grid-x grid-padding-x">
+            <div class="small-3 cell"></div>
+            <div class="small-9 cell">
+                <button class="small button primary" ng-click="addNewPerson()" ng-hide="currentPersonId > -1">Add</button>
+                <button class="small button primary" ng-click="savePerson()" ng-show="currentPersonId > -1">Save</button>
+            </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="small-3 columns">
-            <label class="right inline">E-mail</label>
-        </div>
-        <div class="small-9 columns">
-            <input type="email" id="right-label" ng-model="email">
-        </div>
-    </div>
-    <div class="row">
-        <div class="small-3 columns"></div>
-        <div class="small-9 columns">
-            <button class="small button primary" ng-click="addNewPerson()" ng-hide="currentPersonId > -1">Add</button>
-            <button class="small button primary" ng-click="savePerson()" ng-show="currentPersonId > -1">Save</button>
-        </div>
-    </div>
-</form>
+    </form>
+    
+    <table id="contactList">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Last Name</th>
+                <th>E-mail</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="person in contactlist | orderBy: 'lastname'">
+                <td>{{ $index + 1 }}</td>
+                <td>{{ person.name }}</td>
+                <td>{{ person.lastname }}</td>
+                <td>{{ person.email }}</td>
+                <td>
+                    <ul class="small button-group">
+                        <li><button class="small button" ng-click="editPerson($index)">Edit</button></li>
+                        <li><button class="small button alert" ng-click="deletePerson($index)">Delete</button></li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
-<table id="contactList">
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Last Name</th>
-            <th>E-mail</th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr ng-repeat="person in contactlist | orderBy: 'lastname'">
-            <td>{{ $index + 1 }}</td>
-            <td>{{ person.name }}</td>
-            <td>{{ person.lastname }}</td>
-            <td>{{ person.email }}</td>
-            <td>
-                <ul class="small button-group">
-                    <li><button class="small button" ng-click="editPerson($index)">Edit</button></li>
-                    <li><button class="small button alert" ng-click="deletePerson($index)">Delete</button></li>
-                </ul>
-            </td>
-        </tr>
-    </tbody>
-</table>
+
 
 </body>
 </html>
