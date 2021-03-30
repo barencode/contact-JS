@@ -87,8 +87,8 @@
         <div class="grid-x grid-padding-x">
             <div class="small-3 cell"></div>
             <div class="small-9 cell">
-                <button class="small button primary" ng-click="addNewPerson()" ng-hide="currentPersonId > -1">Add</button>
-                <button class="small button primary" ng-click="savePerson()" ng-show="currentPersonId > -1">Save</button>
+                <button class="button primary" ng-click="addNewPerson()" ng-hide="currentPersonId > -1">Add</button>
+                <button class="button primary" ng-click="savePerson()" ng-show="currentPersonId > -1">Save</button>
             </div>
         </div>
     </form>
@@ -110,9 +110,9 @@
                 <td>{{ person.lastname }}</td>
                 <td>{{ person.email }}</td>
                 <td>
-                    <ul class="small button-group">
-                        <li><button class="small button" ng-click="editPerson($index)">Edit</button></li>
-                        <li><button class="small button alert" ng-click="deletePerson($index)">Delete</button></li>
+                    <ul class="button-group">
+                        <li><button class="button" ng-click="editPerson($index)">Edit</button></li>
+                        <li><button class="button alert" ng-click="deletePerson($index)">Delete</button></li>
                     </ul>
                 </td>
             </tr>
