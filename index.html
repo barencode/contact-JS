@@ -42,6 +42,12 @@
                 $scope.currentPersonId = -1;
             }
         }
+        $scope.editPerson = function(id) {
+            $scope.currentPersonId = id;
+            $scope.name = $scope.contactlist[id].name;
+            $scope.lastname = $scope.contactlist[id].lastname;
+            $scope.email = $scope.contactlist[id].email;
+        }
     })
 </script>
 <!-- end of application declaration -->
