@@ -48,6 +48,9 @@
             $scope.lastname = $scope.contactlist[id].lastname;
             $scope.email = $scope.contactlist[id].email;
         }
+        $scope.deletePerson = function(id) {
+            $scope.contactlist.splice(id, 1);
+        }
     })
 </script>
 <!-- end of application declaration -->
