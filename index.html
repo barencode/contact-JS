@@ -30,6 +30,18 @@
                 $scope.email = '';
             }
         }
+        $scope.savePerson = function() {
+            if($scope.currentPersonId > -1) {
+                var id = $scope.currentPersonId;
+                $scope.contactlist[id].name = $scope.name;
+                $scope.contactlist[id].lastname = $scope.lastname;
+                $scope.contactlist[id].email = $scope.email;
+                $scope.name = '';
+                $scope.lastname = '';
+                $scope.email = '';
+                $scope.currentPersonId = -1;
+            }
+        }
     })
 </script>
 <!-- end of application declaration -->
