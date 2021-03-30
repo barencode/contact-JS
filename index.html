@@ -17,6 +17,15 @@
                 email: 'hydatidosis@gmail.com'
             }
         ];
+        $scope.addNewPerson = function() {
+            if ($scope.name != '') {
+                $scope.contactList.push({
+                    name: $scope.name,
+                    lastname: $scope.lastname,
+                    email: $scope.email
+                });
+            }
+        }
     })
 </script>
 <!-- end of application declaration -->
@@ -30,7 +39,7 @@
             <label class="right inline">Name</label>
         </div>
         <div class="small-9 columns">
-            <input type="text" id="right-label">
+            <input type="text" id="right-label" ng-model="name">
         </div>
     </div>
     <div class="row">
@@ -53,7 +62,7 @@
         <div class="small-3 columns"></div>
         <div class="small-9 columns">
             <button class="small button primary" ng-click="addNewPerson()">Add</button>
-            <button class="small button primary" ng-click="savePerson">Save</button>
+            <button class="small button primary" ng-click="savePerson()">Save</button>
         </div>
     </div>
 </form>
